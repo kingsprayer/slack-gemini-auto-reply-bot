@@ -1,0 +1,57 @@
+{
+  "display_information": {
+    "name": "AI Auto-Reply Assistant",
+    "description": "Intelligent assistant that drafts replies with one-click human approval",
+    "background_color": "#1e1e2f"
+  },
+  "features": {
+    "bot_user": {
+      "display_name": "AI Assistant",
+      "always_online": true
+    }
+  },
+  "oauth_config": {
+    "scopes": {
+      "bot": [
+        "chat:write",
+        "im:history",
+        "im:read",
+        "im:write",
+        "channels:history",
+        "channels:read",
+        "groups:history",
+        "groups:read",
+        "app_mentions:read",
+        "users:read"
+      ],
+      "user": [
+        "chat:write",
+        "im:history",
+        "im:read",
+        "channels:history",
+        "channels:read",
+        "groups:history",
+        "groups:read"
+      ]
+    }
+  },
+  "settings": {
+    "event_subscriptions": {
+      "bot_events": [
+        "app_mention",
+        "message.im",
+        "message.channels",
+        "message.groups"
+      ],
+      "user_events": [
+        "message.im",
+        "message.channels",
+        "message.groups"
+      ]
+    },
+    "interactivity": {
+      "is_enabled": true
+    },
+    "socket_mode_enabled": true
+  }
+}

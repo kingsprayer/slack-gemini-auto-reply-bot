@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  slack-bot:
+    build: .
+    container_name: slack-auto-reply-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - slack_data:/app/data
+    environment:
+      - DATABASE_PATH=/app/data/drafts.db
+      - PORT=8080
+    ports:
+      - "8080:8080"
+
+volumes:
+  slack_data:
